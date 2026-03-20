@@ -1,17 +1,17 @@
 
 .env
+*.env
 .vscode/
 node_modules/
 dist/
 build/
 *.log
-*.env   
 .DS_Store
 coverage/
+
+# Seed files
 backend/create-admin.js
-backend/seed-configs.js
-backend/seed-listings.js
-backend/seed.js
+backend/seed*.js
 
 /backend/node_modules/
 /backend/dist/
