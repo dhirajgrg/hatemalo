@@ -8,10 +8,10 @@ build/
 *.env   
 .DS_Store
 coverage/
-create-admin.js
-seed-configs.js
-seed-listings.js
-seed.js
+backend/create-admin.js
+backend/seed-configs.js
+backend/seed-listings.js
+backend/seed.js
 
 /backend/node_modules/
 /backend/dist/
