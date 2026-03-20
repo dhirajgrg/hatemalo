@@ -1,0 +1,34 @@
+{
+  "name": "hatemalo",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "job listing + mini-market place",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "start": "cross-env NODE_ENV=production node server.js"
+  },
+  "author": "dhiraj gurung",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "google-auth-library": "^10.6.2",
+    "imagekit": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mailgen": "^2.0.32",
+    "mongoose": "^9.3.1",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.3",
+    "slugify": "^1.6.8",
+    "validator": "^13.15.26"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.14"
+  }
+}
