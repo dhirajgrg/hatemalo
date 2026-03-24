@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import PWAInstallBanner from "../ui/PWAInstallBanner";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ export default function RootLayout() {
         <Outlet />
       </main>
       <Footer />
+      <PWAInstallBanner />
     </div>
   );
 }
