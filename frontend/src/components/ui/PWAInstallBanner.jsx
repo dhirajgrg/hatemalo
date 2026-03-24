@@ -1,31 +1,45 @@
 import { useEffect, useState } from "react";
 
 export default function PWAInstallBanner() {
-  const [promptEvent, setPromptEvent] = useState(null);
+  // Initialize from globally captured event (fires before React mounts)
+  const [promptEvent, setPromptEvent] = useState(() => {
+    if (sessionStorage.getItem("pwa-banner-dismissed")) return null;
+    return window.__pwaInstallPrompt || null;
+  });
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    // Don't show if already dismissed this session
     if (sessionStorage.getItem("pwa-banner-dismissed")) return;
 
     const handler = (e) => {
       e.preventDefault();
+      window.__pwaInstallPrompt = e;
       setPromptEvent(e);
     };
 
     window.addEventListener("beforeinstallprompt", handler);
 
     // Hide once installed
-    window.addEventListener("appinstalled", () => setPromptEvent(null));
+    const onInstalled = () => {
+      setPromptEvent(null);
+      window.__pwaInstallPrompt = null;
+    };
+    window.addEventListener("appinstalled", onInstalled);
 
-    return () => window.removeEventListener("beforeinstallprompt", handler);
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handler);
+      window.removeEventListener("appinstalled", onInstalled);
+    };
   }, []);
 
   const handleInstall = async () => {
     if (!promptEvent) return;
-    promptEvent.prompt();
-    const { outcome } = await promptEvent.userChoice;
-    if (outcome === "accepted") setPromptEvent(null);
+    const event = promptEvent;
+    // Clear immediately — prompt() can only be called once per event instance
+    setPromptEvent(null);
+    window.__pwaInstallPrompt = null;
+    event.prompt();
+    await event.userChoice;
   };
 
   const handleDismiss = () => {
