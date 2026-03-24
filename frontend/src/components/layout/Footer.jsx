@@ -6,25 +6,23 @@ export default function Footer() {
   return (
     <footer className="bg-surface-dark text-text-inverse mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <Link
-              to="/"
-              className="flex items-center gap-2 mb-4 cursor-pointer"
-            >
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
-              </div>
-              <span className="text-lg font-bold">Hatemalo</span>
+        {/* Added 'items-start' to force all columns to align to the very top */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+          <div className="flex flex-col items-start self-start">
+            <Link to="/" className="block">
+              <img
+                src="/logo-footer.png"
+                alt="app logo"
+                className="h-14 w-auto object-contain object-left cursor-pointer mb-4"
+              />
             </Link>
-            <p className="text-sm text-text-muted">
-              Your trusted marketplace for jobs and products. Buy, sell, and
-              connect with ease.
+            <p className="text-sm text-text-muted leading-relaxed">
+              Nepal's first #1 marketplace and community for buying, selling,
+              and connecting.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Marketplace */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">
               Marketplace

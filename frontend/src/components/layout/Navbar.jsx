@@ -21,12 +21,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">H</span>
+            <div className="text-lg font-bold text-text-primary ">
+              <img src="/logo.png" alt="app logo" className="h-60" />
             </div>
-            <span className="text-lg font-bold text-text-primary">
-              Hatemalo
-            </span>
           </Link>
 
           {/* Desktop Nav */}
