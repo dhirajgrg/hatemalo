@@ -14,6 +14,9 @@ import DashboardPage from "../pages/dashboard/DashboardPage";
 import ProfilePage from "../pages/profile/ProfilePage";
 import AdminPage from "../pages/admin/AdminPage";
 import VerifyEmailPage from "../pages/auth/VerifyEmailPage";
+import AboutPage from "../pages/about/AboutPage";
+import ContactPage from "../pages/contact/ContactPage";
+import PrivacyPolicyPage from "../pages/legal/PrivacyPolicyPage";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,9 @@ const router = createBrowserRouter([
       },
       { path: "categories", element: <CategoriesPage /> },
       { path: "categories/:slug", element: <CategoryListingsPage /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "contact", element: <ContactPage /> },
+      { path: "privacy-policy", element: <PrivacyPolicyPage /> },
       {
         path: "dashboard",
         element: (

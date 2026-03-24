@@ -56,9 +56,9 @@ export default function Footer() {
               Company
             </h4>
             <ul className="space-y-2">
-              <FooterLink to="/">About</FooterLink>
-              <FooterLink to="/">Contact</FooterLink>
-              <FooterLink to="/">Privacy Policy</FooterLink>
+              <FooterLink to="/about">About</FooterLink>
+              <FooterLink to="/contact">Contact</FooterLink>
+              <FooterLink to="/privacy-policy">Privacy Policy</FooterLink>
             </ul>
           </div>
         </div>
