@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     tailwindcss(),
@@ -65,7 +65,10 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
+        cleanupOutdatedCaches: true,
+        // Only precache built assets in production; dev-dist has no built files
+        globPatterns:
+          mode === "production" ? ["**/*.{js,css,html,ico,png,svg,woff2}"] : [],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -87,6 +90,10 @@ export default defineConfig({
           },
         ],
       },
+      devOptions: {
+        enabled: true,
+        type: "module",
+      },
     }),
   ],
   server: {
@@ -97,4 +104,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

@@ -2,6 +2,18 @@
 
 > Nepal's first #1 marketplace and community for buying, selling, and connecting.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-hatemalo.vercel.app-2563EB?style=for-the-badge&logo=vercel&logoColor=white)](https://hatemalo.vercel.app)
+
+**[🌐 https://hatemalo.vercel.app](https://hatemalo.vercel.app)**
+
+---
+
+## Screenshot
+
+[![Hatemalo App Screenshot](./docs/screenshot.png)](https://hatemalo.vercel.app)
+
+---
+
 Hatemalo is a full-stack web application that allows users to post, browse, and manage listings across dynamic categories. It features authentication, image uploads, location-based listing data, an admin panel, and a Progressive Web App (PWA) experience.
 
 ---
